@@ -57,6 +57,12 @@
     <script>
       var app = new Vue({
         el: '#app',
+        created: function () {
+          window.addEventListener('increment_evt', function (evt) {
+            console.log('event received', evt.detail, this)
+            app.counter++
+          })
+        },
         data: {
           counter: 0,
         },
