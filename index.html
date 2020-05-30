@@ -67,7 +67,14 @@
           decrement: function () {
             this.counter--
           },
-          dispatch: function () {},
+          dispatch: function () {
+            var event = new CustomEvent('increment', {
+              detail: {
+                target: 'vue',
+              },
+            })
+            window.dispatchEvent(event)
+          },
         },
       })
     </script>
