@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro Vue</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .button {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: cornflowerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="container">
+        <div v-on:click="decrement" class="button">-</div>
+        <div>{{counter}}</div>
+        <div v-on:click="increment" class="button">+</div>
+      </div>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+        },
+        methods: {
+          increment: function () {
+            this.counter++
+          },
+          decrement: function () {
+            this.counter--
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
