@@ -18,9 +18,8 @@ export default {
     };
   },
   created: function() {
-    window.addEventListener("increment_evt", evt => {
+    window.addEventListener("increment_evt", () => {
       this.counter++;
-      console.log("event received", evt.detail, this);
     });
   },
   methods: {
@@ -31,14 +30,12 @@ export default {
       this.counter--;
     },
     dispatch: function() {
-      var payload = {
-        target: "vue"
-      };
+      var payload = "vue";
       var event = new CustomEvent("increment", {
         detail: payload
       });
       window.dispatchEvent(event);
-      console.log("event sent", payload);
+      window.postMessage("increment", "*");
     }
   }
 };
