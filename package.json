@@ -8,7 +8,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "NODE_ENV=production vue-cli-service build",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "lint": "vue-cli-service lint"
   },
